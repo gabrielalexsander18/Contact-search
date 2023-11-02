@@ -36,18 +36,19 @@ const contacts = [
 
 const showContacts = () => {
     
-    for (let i = 0; i < contacts.length; i++) {
-        if (input.value.toLowerCase() === contacts[i].name.toLowerCase()) {
+    for (const contact of contacts) {
+        if (input.value.toLowerCase() === contact.name.toLowerCase()) {
             containerP.style.backgroundColor = `rgba(255, 255, 255, .5)`;
             pOne.style.color = `rgba(127,255,0, .9)`;
 
             pOne.innerHTML = `Contato encontrado`
-            pName.innerHTML = `Nome: ${contacts[i].name}`
-            pNumber.innerHTML = `Contato: ${contacts[i].contact}`
+            pName.innerHTML = `Nome: ${contact.name}`
+            pNumber.innerHTML = `Contato: ${contact.contact}`
 
             break
         } else {
             containerP.style.backgroundColor = `rgba(255, 255, 255, .5)`;
+            pOne.style.color = `rgba(250, 0, 0, .9)`;
 
             pOne.innerHTML = `Contato não encontrado🫨`
             pName.innerHTML = ``
